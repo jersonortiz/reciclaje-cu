@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <script src="../../dist/js/config.js"></script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Gestion de puntos de reciclaje</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+        <!-- Google Font: Source Sans Pro -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    </head>
+    <body class="hold-transition sidebar-mini">
+        <main>
+            <div class="wrapper">
+                <!-- Navbar -->
+                <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+                    <!-- Left navbar links -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                        </li>
+
+                    </ul>
+                    <!-- Right navbar links -->
+                    <ul class="navbar-nav ml-auto">
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown" href="#">
+                                admin
+                                <i class="icon ion-md-contact"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+
+                                <a href="./perfil.html" class="dropdown-item">
+                                    <i class="icon ion-md-build"></i>Perfil
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" id="cerrars" class="dropdown-item">
+                                    <i class="icon ion-md-power"></i>Salir
+                                </a>
+                                <div class="dropdown-divider"></div>
+
+                            </div>
+                        </li>
+                    </ul>
+
+                </nav>
+                <!-- /.navbar -->
+
+                <!-- Main Sidebar Container -->
+                <aside class="main-sidebar sidebar-light-primary elevation-4">
+                    <!-- Brand Logo -->
+                    <a href="#" class="brand-link">
+                        <img src="../../dist/img/logo2.png"
+
+                             class="brand-image img-rectangle elevation-0"
+                             style="opacity: .8">
+                        <span class="brand-text font-weight-light">UFPS</span>
+                    </a>
+
+                    <!-- Sidebar -->
+                    <div class="sidebar">
+                        <!-- Sidebar userdownload the source (optional) -->
+                        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                            <div class="image">
+                                <img src="../../dist/img/logo22.png" class="img-circle elevation-2" alt="User Image">
+                            </div>
+                            <div class="info">
+                                <a href="#" class="d-block">  </a>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar Menu -->
+                        <nav class="mt-2">
+                            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                                <!-- Add icons to the links using the .nav-icon class
+                                     with font-awesome or any other icon font library -->
+
+
+
+
+
+                                <li class="nav-header">Acciones</li>
+                                <li class="nav-item">
+                                    <a href="dashboard.html" class="nav-link">
+                                        <i class="icon ion-md-create"></i>
+                                        <p>
+                                            gestion puntos reciclaje
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="material.html" class="nav-link">
+                                        <i class="icon ion-md-create"></i>
+                                        <p>
+                                            gestion materiales
+                                        </p>
+                                    </a>
+                                </li>
+
+
+
+                            </ul>
+                        </nav>
+                        <!-- /.sidebar-menu -->
+                    </div>
+                    <!-- /.sidebar -->
+                </aside>
+
+                <!-- Content Wrapper. Contains page content -->
+                <div class="content-wrapper">
+                    <!-- Content Header (Page header) -->
+                    <section class="content-header">
+                        <div class="container-fluid">
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <ol class="breadcrumb float-sm-right">
+                                        <li class="breadcrumb-item"><a href="#"></a></li>
+
+
+                                    </ol>
+                                </div>
+                            </div>
+                        </div><!-- /.container-fluid -->
+                    </section>
+
+                    <!-- Main content -->
+                    <section class="content">
+                        <div class="row">
+                            <div class="col-12">
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3  class="card-title"></h3>
+                                    </div>
+                                    <div class="card-body">
+
+                                        <div id="accordion">
+
+                                            <div class="card"  >
+                                                <div class="card-header">
+                                                    <h4 class="card-title">
+                                                        materiales de reciclaje
+                                                    </h4>
+                                                </div>
+
+                                                <div class="card-body table-responsive p-0">
+
+                                                    <table id="table1" class="table table-hover table-condensed">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Nombre</th>
+                                                                <th>descripcion</th>
+
+                                                                <th>Acciones</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                            <tr class="odd gradeX" v-for="(material , index) in materiales.lista">
+
+                                                                <td>
+                                                                    {{material.nombre}} 
+                                                                </td>
+                                                                <td>{{material.descripcion}}
+                                                                </td>
+
+                                                                <td>
+                                                                    <button v-on:click="auxmaterial" class="btn btn-block btn-info " :value="material.id"
+                                                                    data-toggle="modal"  data-target="#modal-editar-material">
+                                                                        <i class="icon-pencil"></i>editar
+                                                                    </button>
+                                                                     <button v-on:click="eliminar" class="btn btn-block btn-info "
+                                                                            :value="material.id">
+                                                                        <i class="icon-pencil"></i>eliminar
+                                                                    </button>
+
+                                                                </td>
+
+
+                                                            </tr>
+                                                        </tbody>
+
+
+                                                    </table>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" value="" class="btn btn-primary" data-toggle="modal"  data-target="#modal-registro-material">Añadir</button>
+
+                                                    </div>
+
+
+                                                </div>
+
+
+                                            </div>
+
+
+
+
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <!-- /.card -->
+                                </div>
+
+
+                                <div class="modal fade" id="modal-registro-material">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Añadir material de reciclaje</h4>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <div class="input-group mb-3">
+                                                        <input type="text"   class="form-control" name="nommat" id="nommat" placeholder="nombre" required />
+                                                        <div class="input-group-append">
+                                                            <div class="input-group-text">
+                                                                <span class="fas fa-envelope"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="input-group mb-3">
+                                                        <input type="text" class="form-control"  name="descmat" id="descmat" placeholder="descripcion" required />
+                                                        <div class="input-group-append">
+                                                            <div class="input-group-text">
+                                                                <span class="fas fa-envelope"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="modal-footer justify-content-between">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">cancelar</button>
+                                                    <button type="button" class="btn btn-primary" v-on:click="registromaterial" data-dismiss="modal">registrar</button>
+                                                </div>
+                                            </div>
+                                            <!-- /.modal-content -->
+                                        </div>
+                                        <!-- /.modal-dialog -->
+                                </div>
+
+                                <div class="modal fade" id="modal-editar-material">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">editar material de reciclaje</h4>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <div class="input-group mb-3">
+                                                        <input type="text"   class="form-control" name="editnommat" id="editnommat" placeholder="nombre" required />
+                                                        <div class="input-group-append">
+                                                            <div class="input-group-text">
+                                                                <span class="fas fa-envelope"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="input-group mb-3">
+                                                        <input type="text" class="form-control"  name="editdescmat" id="editdescmat" placeholder="descripcion" required />
+                                                        <div class="input-group-append">
+                                                            <div class="input-group-text">
+                                                                <span class="fas fa-envelope"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="modal-footer justify-content-between">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">cancelar</button>
+                                                    <button type="button" class="btn btn-primary" v-on:click="editar" data-dismiss="modal">guardar</button>
+                                                </div>
+                                            </div>
+                                            <!-- /.modal-content -->
+                                        </div>
+                                        <!-- /.modal-dialog -->
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </section>
+                    <!-- /.content -->
+
+                    <!-- /.content-wrapper -->
+                    <footer class="main-footer">
+                        <div class="float-right d-none d-sm-block">
+                            <b>Version</b> 1.0.0-rc.3
+                        </div>
+                        <strong>Copyright &copy; 2021-2025 gestion ubicaciones de puntos de reciclaje</strong> 
+                        All rights
+                        reserved.
+                    </footer>
+
+
+
+
+                    <!-- Control Sidebar -->
+                    <aside class="control-sidebar control-sidebar-dark">
+                        <!-- Control sidebar content goes here -->
+                    </aside>
+                    <!-- /.control-sidebar -->
+                </div>
+
+            </div>
+            <!-- ./wrapper -->
+        </main>
+        <!-- jQuery -->
+        <script src="../../plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- ChartJS -->
+        <script src="../../plugins/chart.js/Chart.min.js"></script>
+        <!-- DataTables -->
+        <script src="../../plugins/datatables/jquery.dataTables.js"></script>
+        <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+        <!-- AdminLTE App -->
+
+        <script src="../../dist/js/adminlte.min.js"></script>
+        <script src="../../dist/js/vue.min.js"></script>
+
+        <script src="../../dist/js/material.js"></script>
+        <script>
+
+        </script>
+
+    </body>
+</html>

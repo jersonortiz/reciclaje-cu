@@ -12,7 +12,7 @@ if (authToken === null) {
     console.log('no hay sesion');
     location.href = "../login.html";
 } else {
-    let map = null;
+    let mapaa = null;
     console.log(authToken);
     console.log(url);
     const vm = new Vue({
@@ -67,6 +67,7 @@ if (authToken === null) {
         },
         created: cargapuntos
     });
+
     window.onload = function () {
 
 
@@ -207,21 +208,23 @@ if (authToken === null) {
         let latitud = parseFloat(vals[1]);
         let longitud = parseFloat(vals[2]);
 
-        if (map !== null) {
-            map.setTarget(null);
+        if (mapaa !== null) {
+            mapaa.setTarget(null);
         }
 
         let  bingKey = 'Ah41iutd3LvB8dIZkp0CLBSe3UDYMoIwraSMcTK4RJJIlwGPbVOIDrLhJOJrYA31';
         let layers = createBingLayer(bingKey);
         var place = ol.proj.fromLonLat([longitud, latitud]);
+        console.log(place);
 
         let view = createView(place);
 
-        let map = createMap(layers, view);
+        console.log('algo');
 
-        map = createMapp(layers, place);
+        mapaa = createMap(layers, view);
+        console.log('algo');
         let punto = createPoint(place)
-        map.addLayer(punto);
+        mapaa.addLayer(punto);
 
     }
 
